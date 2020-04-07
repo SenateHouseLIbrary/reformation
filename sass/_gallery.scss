@@ -1,0 +1,294 @@
+///////////////////////////////////////////////////////////////////////////////
+// Styles for gallery and gallery items.                                     //
+///////////////////////////////////////////////////////////////////////////////
+
+.view-gallery {
+  @include clearfix();
+  margin-left: 0px; // -20px;
+}
+
+.view-galleries,
+.view-home-page-gallery {
+  @include clearfix();
+  margin-left: -20px;
+}
+
+.node-gallery,
+.node-gallery-item {
+  &.node-teaser {
+    float: left;
+    margin: 0 0 50px 30px;
+    width: 326px;
+    height: 376px; // Updated from 326px for shard shaped images
+    background: $col_gallery_missing_image_bg;
+
+    &.no-image {
+      padding: 20px;
+      @include box-sizing(border-box);
+    }
+
+    a {
+      display: block;
+      padding: 0;
+      background: transparent;
+    }
+
+    img {
+      display: block;
+    }
+  }
+}
+
+.node-gallery-item {
+  &.node-teaser {
+    width: 153px;
+    height: 153px;
+    padding: 0 5px;
+  }
+}
+
+.node-gallery {
+  &.node-teaser {
+    position: relative;
+
+    h2 {
+      a {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px 0;
+        background: rgba($colour0, 0.74);
+        color: $colour1;
+        text-align: center;
+        /* &:hover{                   // Removed in order to colour-code on hover (see below)
+          color: $colour35;
+        } */
+      }
+    }
+
+    /* Shard shapes for gallery teaser images on Exhibition page + colour coding on hover */
+
+    /* Prequel */
+    &#node-node-29 {
+      -webkit-clip-path: polygon(0 0, 100% 9%, 85% 100%, 16% 100%);
+      clip-path: polygon(0 0, 100% 9%, 85% 100%, 16% 100%);
+      margin-left: 12%;
+      a:hover {
+        color: $colour42;
+      }
+    }
+
+    /* Society */
+    &#node-node-150 {
+      -webkit-clip-path: polygon(7% 0, 100% 16%, 78% 100%, 23% 100%);
+      clip-path: polygon(7% 0, 100% 16%, 78% 100%, 23% 100%);
+      a:hover {
+        color: $colour44;
+      }
+    }
+
+    /* Communications */
+    &#node-node-151 {
+      -webkit-clip-path: polygon(25% 0, 81% 12%, 100% 100%, 0 99%);
+      clip-path: polygon(25% 0, 81% 12%, 100% 100%, 0 99%);
+      a:hover {
+        color: $colour45;
+      }
+    }
+
+    /* Culture */
+    &#node-node-152 {
+      -webkit-clip-path: polygon(4% 23%, 100% 0, 85% 100%, 23% 100%);
+      clip-path: polygon(4% 23%, 100% 0, 85% 100%, 23% 100%);
+      margin-left: 25%;
+      a:hover {
+        color: $colour43;
+      }
+    }
+
+    /* New World Order */
+    &#node-node-153 {
+      -webkit-clip-path: polygon(11% 5%, 74% 10%, 100% 100%, 0% 100%);
+      clip-path: polygon(11% 5%, 74% 10%, 100% 100%, 0% 100%);
+      a:hover {
+        color: $colour46;
+      }
+    }
+  }
+}
+
+.node-gallery-item {
+  position: relative;
+
+  &.node-teaser {
+    width: 153px;
+    height: 153px;
+    padding: 0 5px;
+
+    .gallery-link {
+      position: absolute;
+      @include box-sizing(border-box);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px;
+      background: rgba($colour0, 0.74);
+      color: $colour1;
+      text-align: center;
+      @include size(font-size, 17);
+      opacity: 0;
+      @include transition(opacity 0.3s);
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Colour coding for individual gallery pages */
+
+/* Prequel */
+.page-node-29 #content-second {
+  border: 10px solid $colour42;
+  background: $colour47;
+  margin: 0 20px;
+
+  h2 {
+    background: $colour42;
+    color: $colour1;
+    display: inline-block;
+    left: 7.5%;
+    width: 82%;
+    height: 8%;
+    top: 70%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+/* Society */
+.page-node-150 #content-second {
+  border: 10px solid $colour44;
+  background: $colour49;
+  margin: 0 20px;
+
+  h2 {
+    background: $colour44;
+    color: $colour0;
+    display: inline-block;
+    left: 7.5%;
+    width: 82%;
+    height: 8%;
+    top: 70%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+/* Communications */
+.page-node-151 #content-second {
+  border: 10px solid $colour45;
+  background: $colour50;
+  margin: 0 20px;
+
+  h2 {
+    background: $colour45;
+    color: $colour1;
+    display: inline-block;
+    left: 7.5%;
+    width: 82%;
+    height: 8%;
+    top: 70%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+/* Culture */
+.page-node-152 #content-second {
+  border: 10px solid $colour43;
+  background: $colour48;
+  margin: 0 20px;
+
+  h2 {
+    background: $colour43;
+    color: $colour1;
+    display: inline-block;
+    left: 7.5%;
+    width: 82%;
+    height: 8%;
+    top: 70%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+/* New World Order */
+.page-node-153 #content-second {
+  border: 10px solid $colour46;
+  background: $colour51;
+  margin: 0 20px;
+
+  h2 {
+    background: $colour46;
+    color: $colour1;
+    display: inline-block;
+    left: 7.5%;
+    width: 82%;
+    height: 8%;
+    top: 70%;
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+/* Content styles for gallery image pop-up */
+
+.gi {
+  margin-bottom: 20px;
+}
+
+.gi-attribution {
+  font-style: italic;
+  text-align: center;
+}
+
+.gi-image {
+  background: $col_gallery_popup_image_bg;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.gi-video {
+  max-width: 100%;
+
+  .mfp-content & iframe {
+    width: 100%;
+  }
+}
+
+.gi-description {
+  text-align: justify;
+}
+
+.mfp-content {
+  .node {
+    max-width: 700px;
+    margin: 20px auto;
+    background: $col_gallery_popup_bg;
+    padding: 20px 30px;
+  }
+}

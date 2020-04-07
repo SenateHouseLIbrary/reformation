@@ -1,0 +1,53 @@
+///////////////////////////////////////////////////////////////////////////////
+// Styles for Instagram and Twitter.                                         //
+///////////////////////////////////////////////////////////////////////////////
+
+.front,
+.node-type-gallery {
+  #content-third {
+    .block {
+      h2 {
+        @include size(font-size, 43);
+        text-align: center;
+      }
+    }
+  }
+
+  #content-second,
+  #content-third {
+    @include clearfix();
+
+    .column {
+      margin-bottom: 0;
+    }
+  }
+
+  .block-instagram-block,
+  .block-twitter {
+    width: 50%;
+    float: left;
+  }
+
+  .block-twitter {
+    text-align: center;
+  }
+}
+
+.block-instagram-block {
+  a {
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+.instagram-embed {
+  position: relative;
+  background: $colour1;
+  color: $colour0;
+  padding: 0;
+  width: 640px;
+  margin: 40px auto;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  @include border-radius(4px);
+}

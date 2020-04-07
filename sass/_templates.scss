@@ -1,0 +1,104 @@
+///////////////////////////////////////////////////////////////////////////////
+// Style of CKEditor templates.                                              //
+///////////////////////////////////////////////////////////////////////////////
+
+//
+// General
+//
+
+body.cke_editable {
+  @include size(font-size, 16);
+}
+
+//
+// Columns
+//
+
+.columns {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.column {
+  float: left;
+
+  &.right {
+    margin-left: 5%;
+  }
+
+  &.w20 {
+    width: 18%;
+
+    &.right {
+      margin-left: 2%;
+    }
+  }
+
+  &.w25 {
+    width: 20%;
+  }
+
+  &.w33 {
+    width: 30%;
+  }
+
+  &.w50 {
+    width: 45%;
+  }
+
+  &.w75 {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: $page_width - 1px) {
+  .columns {
+    .column {
+      float: none;
+      width: auto;
+      margin-left: 0;
+    }
+
+    // CKEditor is narrower than this, but we still want to see the columns
+    .cke_editable & {
+      .column {
+        float: left;
+
+        &.right {
+          margin-left: 5%;
+        }
+
+        &.w20 {
+          width: 18%;
+
+          &.right {
+            margin-left: 2%;
+          }
+        }
+
+        &.w25 {
+          width: 20%;
+        }
+
+        &.w33 {
+          width: 30%;
+        }
+
+        &.w50 {
+          width: 45%;
+        }
+
+        &.w75 {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

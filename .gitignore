@@ -1,0 +1,7 @@
+node_modules
+.sass-cache
+_site
+.DS_Store
+.idea
+package-lock.json
+scaffold.html

@@ -1,0 +1,282 @@
+///////////////////////////////////////////////////////////////////////////////
+// Stores common variables, mixins and imported utilities.                   //
+///////////////////////////////////////////////////////////////////////////////
+
+//
+// Colours
+//
+$colour0: #000; //
+$colour1: #fff; // header & footer text; other text
+$colour2: #4814a0; // headings
+$colour3: #e2e1dd; // link fg
+$colour4: #111515; // header bg
+$colour5: #e24e42; // today link fg; footer link fg
+$colour6: #cd3000; // link fg; header link fg; event month buttons, some icons, button bg
+$colour7: #1e2a29; // body copy; exhibition detail bg; button hover bg
+$colour8: #b5c0c0; // breadcrumb separator
+$colour9: #15968b; // spotlight bg; icon landing page links
+$colour10: #101a19; // spotlight heading fg
+$colour11: #1e2a29; // secondary spotlight bg
+$colour12: #f0efee; // third spotlight bg; events current month
+$colour13: #f9f9f8; // page bg; last spotlight bg; event teaser aside
+$colour14: #117970; // event detail font/icon colour
+$colour15: #e5f5fa; // senate house event type
+$colour16: #d5f8ee; // online event type
+$colour17: #f8f1db; // external event type
+$colour18: #e8e7e5; // left nav bg
+$colour19: #4a6e86; // research collections
+$colour20: #24455b; // research collections seconday spotlight bg
+$colour21: #668faa; // research collections
+$colour22: #b8528d; // special collections
+$colour23: #f1c40f; // databases and eresources
+$colour24: #27ae61; // print and electronic journals
+$colour25: #88509b; // new acquisitions
+$colour26: #e0e0e0; // spotlight shadow
+$colour27: #161e20; // homepage mid bar spotlight shadow
+$colour28: #f3f2f1; // homepage news background
+
+// Microsite colours
+$colour29: #015ea2; // button bg, menu active bg, homepage intro bg (blue) 015ea2 (dark blue) 0284bd (mid blue) 049ccc (bright light blue)
+$colour30: #e24e42; // header bg
+$colour31: #efedea; // page bg
+$colour32: #b6b5b1; // icon landing page links
+$colour33: #e5e1de; // last/only spotlight bg
+$colour34: #c7c7c7; // light gray
+$colour35: #f7f1d5; // sandy yellow
+$colour36: #f6f4f2; // second content bg (gallery bg)
+$colour37: #121514; // today bg
+$colour38: #2b2a2a; // dusty black
+$colour39: #e98000; // mustard
+$colour40: #d00b33; // pink // d00b33 light red
+$colour41: #16202a; // header bg - very dark blue from banner image
+
+// Reformation branding colours
+
+$colour42: #009fe3; // General (prequel)
+$colour43: #009640; // Culture
+$colour44: #ffed00; // Society
+$colour45: #e30613; // Communications
+$colour46: #951b81; // New World Order
+
+$colour47: #d0effb; // tint of General (prequel) // #82D1F2	#9CDBF5	#B6E5F8 = other options
+$colour48: #d0eed8; // tint of Culture // #82CD9F	#9CD8B2	#B6E3C5 = other options
+$colour49: #fffdd0; // tint of Society // #FFF782	#FFF99C	#FFFBB6 = other options
+$colour50: #fbced3; // tint of Communications // #F2838B	#F59CA3	#F8B5BB = other options
+$colour51: #edd3e9; // tint of New World Order // #CC8EC2	#D7A5CF	#E2BCDC = other options
+
+$col_page_bg: $colour31;
+$col_page_fg: $colour7;
+
+$col_link_bg: $colour1;
+$col_link_fg: $colour0;
+$col_link_active_bg: $colour40;
+$col_link_active_fg: $colour1;
+
+$col_button_bg: $colour0;
+$col_button_fg: $colour1;
+$col_button_active_bg: $colour40;
+$col_button_active_fg: $colour1;
+
+$col_table_border: $col_page_fg;
+$col_input_border: $col_page_fg;
+
+$col_figcaption_bg: $col_page_bg;
+$col_figcaption_fg: $col_page_fg;
+
+$col_blockquote_quote_fg: $colour30;
+
+$col_input_bg: $colour1;
+$col_input_fg: $col_page_fg;
+
+$col_today_bg: $colour37;
+$col_today_fg: $colour1;
+$col_today_link_fg: $colour5;
+
+$col_header_bg: $colour41;
+$col_header_fg: $colour0;
+$col_header_link_fg: $colour6;
+
+$col_pre_footer_bg: $colour1;
+$col_pre_footer_fg: $colour0;
+$col_pre_footer_link_fg: $colour0;
+$col_pre_footer_link_active_fg: $colour40;
+
+$col_footer_bg: $colour0;
+$col_footer_fg: $colour1;
+$col_footer_link_fg: $colour1;
+$col_footer_link_active_fg: $colour1;
+
+$col_left_nav_bg: $colour33;
+$col_left_nav_button_bg: $colour38;
+$col_left_nav_button_fg: $colour1;
+$col_left_nav_item_bg: $colour1;
+$col_left_nav_link_bg: $colour1;
+$col_left_nav_link_fg: $colour0;
+$col_left_nav_link_active_bg: $colour10;
+$col_left_nav_link_active_fg: $colour1;
+
+$col_spotlight_bg: $colour33;
+$col_spotlight_fg: $colour0;
+$col_spotlight_heading_fg: $colour0;
+$col_info_spotlight_bg: $colour29;
+$col_info_spotlight_fg: $colour1;
+$col_info_spotlight_heading_fg: $colour0;
+$col_last_spotlight_bg: $colour1;
+$col_last_spotlight_fg: $colour33;
+$col_last_spotlight_heading_fg: $colour0;
+$col_middle_spotlight_bg: $colour38;
+$col_middle_spotlight_fg: $colour1;
+$col_middle_spotlight_heading_fg: $colour1;
+$col_spotlight_left_bar: $colour30;
+
+$col_homepage_cta_bg: $colour38;
+$col_homepage_cta_fg: $colour1;
+$col_homepage_cta_active_bg: $colour40;
+$col_homepage_cta_active_fg: $colour1;
+$col_homepage_mid_bar_bg: $colour7;
+$col_homepage_mid_bar_fg: $col_link_fg;
+$col_homepage_mid_bar_spot_shadow: $colour27;
+$col_homepage_news_bg: $colour28;
+
+$col_exhibition_banner_heading_bg: $colour1;
+$col_exhibition_banner_heading_fg: $col_page_fg;
+$col_exhibition_caption_fg: $colour1;
+$col_exhibition_detail_bg: $colour7;
+$col_exhibition_detail_fg: $colour1;
+$col_exhibition_detail_icon_fg: $colour9;
+$col_exhibition_secondary_spotlight_bg: $colour11;
+$col_exhibition_secondary_spotlight_fg: $colour1;
+$col_exhibition_secondary_spotlight_heading_fg: $colour1;
+
+$col_event_teaser_aside_bg: $colour13;
+$col_event_type_senate_house_bg: $colour15;
+$col_event_type_online_bg: $colour16;
+$col_event_type_external_bg: $colour17;
+$col_event_teaser_icon_fg: $colour14;
+$col_event_month_bg: $col_link_bg;
+$col_event_month_fg: $col_link_fg;
+$col_event_month_active_bg: $col_link_active_bg;
+$col_event_month_active_fg: $col_link_active_fg;
+$col_event_controls_current_month_bg: $col_link_active_bg;
+$col_event_controls_current_month_fg: $col_link_active_fg;
+
+$col_blog_teaser_icon_fg: $colour14;
+$col_blog_stripe: $colour12;
+
+$col_research_collections_banner_heading_bg: $colour19;
+$col_research_collections_banner_heading_fg: $colour1;
+$col_research_collections_info_spotlight_bg: $colour19;
+$col_research_collections_info_spotlight_fg: $colour1;
+$col_research_collections_secondary_spotlight_bg: $colour20;
+$col_research_collections_secondary_spotlight_fg: $colour1;
+
+$col_related_info_link_bg: $colour7;
+$col_related_info_link_fg: $col_link_fg;
+$col_related_info_link_active_fg: $colour1;
+
+$col_landing_icon: $colour32;
+$col_research_collections: $colour21;
+$col_special_collections: $colour22;
+$col_databases_eresources: $colour23;
+$col_print_electronic_journals: $colour24;
+$col_new_acquisitions: $colour25;
+$col_spot_shadow: $colour26;
+
+$col_main_menu_bg: $colour38;
+$col_main_menu_fg: $colour1;
+$col_main_menu_active_bg: $colour40;
+$col_main_menu_active_fg: $colour1;
+
+$col_visit_shl_bg: $colour46;
+$col_visit_shl_fg: $colour1;
+$col_visit_shl_active_bg: $col_main_menu_active_bg;
+$col_visit_shl_active_fg: $colour1;
+
+$col_gallery_missing_image_bg: $colour33;
+$col_gallery_popup_bg: $colour1;
+$col_gallery_popup_image_bg: #222222;
+
+$col_second_content_bg: $colour36;
+$col_homepage_intro_fg: $colour1;
+$col_homepage_intro_bg: $colour29;
+
+//
+// Layout/dimensions
+//
+$page_width: 1440px;
+$content_padding: 37px;
+$left_nav_width: 300px;
+$right_sidebar_width: 371px;
+$right_sidebar_margin: 30px;
+$homepage_right_sidebar_width: 283px;
+
+$content_with_no_sidebar_width: $page_width - $content_padding -
+  $content_padding;
+$content_with_right_sidebar_width: $page_width - $content_padding -
+  $right_sidebar_margin - $right_sidebar_width;
+
+///////////////////////////////////////////////////////////////////////////////
+
+//
+// Import framework utilities
+//
+
+@import 'compass/css3/box-sizing';
+@import 'compass/utilities/general/clearfix';
+@import 'compass/css3/border-radius';
+@import 'compass/css3/images'; // gradients
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+@import 'compass/css3/columns';
+
+//
+// Custom mixins
+//
+
+// Rem sizing with pixel fallback (relies on font-size of html reset to 10px)
+// Make sure you pass it a unitless value, e.g. divide by 1px to remove px
+@mixin size(
+  $prop,
+  $sizeValue,
+  $sizeValue2: '',
+  $sizeValue3: '',
+  $sizeValue4: ''
+) {
+  @if $sizeValue4 != '' {
+    #{$prop}: ($sizeValue * 1) +
+      px
+      ($sizeValue2 * 1) +
+      px
+      ($sizeValue3 * 1) +
+      px
+      ($sizeValue4 * 1) +
+      px;
+    #{$prop}: ($sizeValue / 10) +
+      rem
+      ($sizeValue2 / 10) +
+      rem
+      ($sizeValue3 / 10) +
+      rem
+      ($sizeValue4 / 10) +
+      rem;
+  } @else if $sizeValue3 != '' {
+    #{$prop}: ($sizeValue * 1) +
+      px
+      ($sizeValue2 * 1) +
+      px
+      ($sizeValue3 * 1) +
+      px;
+    #{$prop}: ($sizeValue / 10) +
+      rem
+      ($sizeValue2 / 10) +
+      rem
+      ($sizeValue3 / 10) +
+      rem;
+  } @else if $sizeValue2 != '' {
+    #{$prop}: ($sizeValue * 1) + px ($sizeValue2 * 1) + px;
+    #{$prop}: ($sizeValue / 10) + rem ($sizeValue2 / 10) + rem;
+  } @else {
+    #{$prop}: ($sizeValue * 1) + px;
+    #{$prop}: ($sizeValue / 10) + rem;
+  }
+}

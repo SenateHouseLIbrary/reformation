@@ -1,0 +1,21 @@
+{
+  "name": "reformation",
+  "version": "1.0.0",
+  "description": "Reformation static site assets",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {
+    "sass": "^1.14.3"
+  },
+  "author": "Russell Kennedy",
+  "license": "MIT"
+}

@@ -1,0 +1,18 @@
+///////////////////////////////////////////////////////////////////////////////
+// Combines all partials into one main stylesheet.                           //
+///////////////////////////////////////////////////////////////////////////////
+
+@import 'compass/reset';
+@import 'base'; // Resets, imports and variable definitions
+@import 'core'; // Styles for core HTML elements
+@import 'layout'; // Layout of pages
+@import 'forms'; // Style of form inputs
+@import 'templates'; // CKEditor styles and their responsiveness
+@import 'blogs';
+@import 'events'; // Exhibitions and events
+@import 'gallery';
+@import 'home_page';
+@import 'social'; // Instagram and Twitter
+@import 'system';
+@import 'maps'; // Google Maps
+@import 'responsiveness'; // Mobile/tablet styles

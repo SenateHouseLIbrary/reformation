@@ -1,0 +1,82 @@
+///////////////////////////////////////////////////////////////////////////////
+// Styles for blogs.                                                         //
+///////////////////////////////////////////////////////////////////////////////
+
+// See also _news.scss which uses much the same styles
+.node-blog-post.node-teaser,
+.node-blog-post.node-featured {
+  position: relative;
+  margin-bottom: 40px;
+
+  /*&.even {
+    background: $col_blog_stripe;
+  }*/
+
+  aside {
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      display: block;
+    }
+  }
+
+  & > .content {
+    & > h2 {
+      @include size(font-size, 28);
+      @include size(margin-bottom, 20);
+
+      a {
+        padding: 10px 5px;
+        line-height: 1.85;
+      }
+    }
+
+    &.with-image {
+      margin-left: 300px;
+      @include size(padding-left, 10);
+    }
+  }
+
+  .blog-summary {
+    @include size(margin-bottom, 20);
+    @include size(padding-left, 10);
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .blog-details {
+    @include size(font-size, 15);
+    @include size(padding-left, 10);
+
+    & > div {
+      @include size(margin-bottom, 20);
+    }
+  }
+
+  .blog-category {
+    a.active {
+      &:link,
+      &:visited {
+        color: $col_link_fg;
+      }
+
+      &:hover,
+      &:focus {
+        color: $col_link_active_fg;
+      }
+    }
+  }
+}
+
+.node-blog-post.node-featured {
+  & > .content {
+    & > h2 {
+      @include size(font-size, 49);
+    }
+  }
+}

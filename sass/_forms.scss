@@ -1,0 +1,73 @@
+///////////////////////////////////////////////////////////////////////////////
+// Form styles.                                                              //
+///////////////////////////////////////////////////////////////////////////////
+
+input[type='text'],
+input[type='password'],
+input.form-text {
+  @include box-sizing(border-box);
+  border: 1px solid $col_input_border;
+  background: $col_input_bg;
+  color: $col_input_fg;
+  height: 40px / 17px * 1em;
+  @include size(font-size, 17);
+  font-weight: bold;
+  @include size(padding, 0, 10);
+}
+
+input[type='submit'],
+input[type='reset'],
+input.form-submit,
+button.form-submit {
+  vertical-align: middle;
+}
+
+textarea {
+  border: 1px solid $col_input_border;
+  background: $col_input_bg;
+  color: $col_input_fg;
+  line-height: 1.5;
+  @include size(padding, 5, 10);
+  @include size(font-size, 17);
+  font-weight: bold;
+}
+
+select,
+.form-select {
+  border: 1px solid $col_input_border;
+  background: $col_input_bg;
+  color: $col_input_fg;
+  @include size(font-size, 16);
+  padding: 0 5px;
+}
+
+select:not([multiple]),
+.form-select:not([multiple]) {
+  height: 30px;
+}
+
+.views-exposed-form {
+  .views-exposed-widget {
+    padding: 0;
+    vertical-align: bottom;
+
+    .form-submit {
+      margin-top: 1em;
+    }
+  }
+
+  .views-submit-button {
+    padding: 0 0 0 1em;
+  }
+}
+
+.webform-container-inline {
+  label {
+    display: inline-block;
+    width: 15%;
+  }
+}
+
+fieldset legend {
+  font-weight: bold;
+}

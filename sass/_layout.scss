@@ -1,0 +1,714 @@
+///////////////////////////////////////////////////////////////////////////////
+// Page layout.                                                              //
+///////////////////////////////////////////////////////////////////////////////
+
+#skip-link .element-focusable:focus {
+  position: fixed !important;
+  top: 20px;
+  left: 20px;
+  background: $col_page_bg;
+  color: $col_page_fg;
+  border: 2px solid $col_page_fg;
+  padding: 20px;
+  z-index: 10000;
+}
+
+#today .inner,
+#header .inner,
+#breadcrumb,
+#main,
+#content-second .region,
+#content-third .region,
+#messages,
+#nav-positioner,
+#footer-menu-links,
+#pre-footer .region,
+#footer .region,
+.front #intro-content {
+  max-width: $page_width;
+  // - $content_padding - $content_padding;
+  padding: 0;
+  // $content_padding;
+  margin: 0 auto;
+}
+
+#main {
+  max-width: $page_width;
+  padding: 0;
+}
+
+#content {
+  padding: 0 $content_padding;
+}
+
+#content-second {
+  background-color: $col_second_content_bg;
+
+  .block {
+    h2 {
+      text-align: center;
+      @include size(font-size, 43);
+    }
+  }
+}
+
+#content-second,
+#content-third {
+  .region {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+
+  .block {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.content {
+  margin: 0 20px;
+}
+
+#today {
+  background: $col_today_bg;
+  color: $col_today_fg;
+  //  border-bottom: 2px solid $col_header_bg;
+  @include size(font-size, 14);
+
+  .inner {
+    position: relative;
+    padding: 10px 0;
+  }
+}
+
+#shl-logo-container {
+  display: inline-block;
+  width: image-width('shl.png');
+  vertical-align: top;
+}
+
+#presents {
+  line-height: 30px;
+  display: none;
+}
+
+#shl-logo {
+  max-width: none;
+}
+
+#visit-shl {
+  position: absolute;
+  top: 10px;
+  right: $content_padding;
+  display: inline-block;
+  background: $col_visit_shl_bg;
+  color: $col_visit_shl_fg;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+
+  &:after {
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid $col_visit_shl_bg;
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+  }
+
+  &:hover,
+  &:focus {
+    background: $col_visit_shl_active_bg;
+    color: $col_visit_shl_active_fg;
+
+    &:after {
+      border-left-color: $col_visit_shl_active_bg;
+    }
+  }
+}
+
+#header {
+  background: $col_header_bg;
+  color: $col_header_fg;
+  //  border-bottom: 2px solid $col_header_bg;
+
+  a:link,
+  a:visited {
+    color: $col_header_link_fg;
+  }
+
+  .inner {
+    background: $col_header_bg image-url('header-small.jpg') no-repeat scroll 0
+      0;
+    height: image-height('header-small.jpg');
+    padding: 0;
+
+    .front & {
+      // background-image: image-url('header-large.jpg');
+      height: 720px;
+    }
+  }
+}
+
+#logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-indent: -9000px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.front #messages {
+  padding-top: 45px;
+}
+
+body.one-sidebar {
+  &.sidebar-second #content {
+    float: left;
+    width: $content_with_right_sidebar_width;
+  }
+}
+
+body.sidebar-second {
+  #content {
+    padding-right: 0;
+  }
+}
+
+.region-sidebar-second {
+  float: left;
+  width: $right_sidebar_width;
+  margin-left: $right_sidebar_margin;
+}
+
+.region-sidebar-second {
+  @include size(font-size, 15);
+
+  h2 {
+    @include size(font-size, 22);
+    font-weight: normal;
+  }
+
+  h3 {
+    @include size(font-size, 20);
+  }
+
+  .block {
+    background: $col_spotlight_bg;
+    color: $col_spotlight_fg;
+    padding: 35px 20px;
+    margin: 0;
+    //  border-left: 5px solid $col_spotlight_left_bar;
+
+    h2,
+    h3,
+    h4 {
+      color: $col_spotlight_heading_fg;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    &:first-child {
+      background: $col_info_spotlight_bg;
+      color: $col_info_spotlight_fg;
+
+      h2,
+      h3,
+      h4 {
+        color: $col_info_spotlight_heading_fg;
+      }
+    }
+
+    &.operating-hours {
+      background: $col_middle_spotlight_bg;
+      color: $col_middle_spotlight_fg;
+
+      h2,
+      h3,
+      h4 {
+        color: $col_middle_spotlight_heading_fg;
+      }
+    }
+
+    &.address {
+      @include size(font-size, 20);
+    }
+
+    &:only-child {
+      background: $col_spotlight_bg;
+      color: $col_spotlight_fg;
+      padding: 35px 20px;
+
+      h2,
+      h3,
+      h4 {
+        color: $col_spotlight_heading_fg;
+      }
+    }
+  }
+}
+
+#breadcrumb {
+  font-family: 'ff-meta-web-pro', sans-serif, Arial;
+  padding: 28px 0;
+
+  ul {
+    display: inline-block;
+    list-style-type: none;
+    @include size(font-size, 16);
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 40px;
+      letter-spacing: 0.8px;
+
+      a {
+        display: inline-block;
+        padding: 6px 8px;
+      }
+    }
+  }
+
+  .left-nav & ul {
+    padding-left: $content_padding;
+  }
+}
+
+#main-menu {
+  font-family: 'LemonMilk'; //"skolar-latin";
+  text-align: center;
+  height: 0;
+  overflow: visible;
+  margin-bottom: 80px;
+
+  a {
+    &:link,
+    &:visited {
+      background: $col_main_menu_bg;
+      color: $col_main_menu_fg;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active-trail {
+      background: $col_main_menu_active_bg;
+      color: $col_main_menu_active_fg;
+    }
+  }
+}
+
+#main-menu-links {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0 25px;
+  @include size(font-size, 22);
+  background: $col_main_menu_bg;
+  border: 1px solid $col_main_menu_bg;
+  margin: 0;
+  @include transform(translateY(-50%));
+  position: relative;
+  z-index: 1;
+
+  li {
+    margin: 0;
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 23px 15px 24px;
+  }
+
+  .front & {
+    display: none;
+  }
+}
+
+#pre-footer {
+  background-color: $col_pre_footer_bg;
+  color: $col_pre_footer_fg;
+  padding: 30px 0 20px;
+
+  a:link,
+  a:visited {
+    background-color: $col_pre_footer_bg;
+    color: $col_pre_footer_link_fg;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: $col_pre_footer_bg;
+    color: $col_pre_footer_link_active_fg;
+  }
+
+  .icon-list {
+    text-align: center;
+    @include size(font-size, 45);
+
+    li {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+
+    a {
+      text-indent: -9000px;
+      overflow: hidden;
+      width: 0;
+      padding-left: 1.4em;
+      margin-bottom: 0;
+
+      &:before {
+        text-indent: 0;
+      }
+    }
+  }
+
+  p,
+  ul,
+  ol,
+  .block {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#footer {
+  background-color: $col_footer_bg;
+  color: $col_footer_fg;
+  @include size(font-size, 14);
+  padding: 40px 0;
+
+  h2 {
+    @include size(font-size, 17);
+  }
+
+  a:link,
+  a:visited {
+    background-color: $col_footer_bg;
+    color: $col_footer_link_fg;
+    text-decoration: underline;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: $col_footer_bg;
+    color: $col_footer_link_active_fg;
+    text-decoration: none;
+  }
+}
+
+#footer-menu-links {
+  & > li {
+    display: inline-block;
+    margin: 0;
+
+    &:before {
+      display: inline;
+      content: '| ';
+    }
+
+    &:first-child:before {
+      display: none;
+    }
+  }
+}
+
+ul.icon-list {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+#nav {
+  position: absolute;
+  top: 159px;
+  left: 0;
+  width: 100%;
+
+  .menu-block-nav {
+    position: relative;
+    z-index: 1;
+    background: $col_left_nav_bg;
+    width: $left_nav_width - 10px - 10px;
+    padding: 10px;
+    margin: 0;
+    list-style-position: inside;
+  }
+
+  li {
+    margin: 2px 0;
+    list-style-type: none;
+    list-style-image: none;
+    padding: 0;
+
+    a {
+      display: block;
+      padding: 4px 14px;
+      @include size(font-size, 15);
+      background: $col_left_nav_item_bg;
+
+      &:link,
+      &:visited {
+        background: $col_left_nav_link_bg;
+        color: $col_left_nav_link_fg;
+      }
+
+      &:hover,
+      &:focus {
+        background: $col_left_nav_link_active_bg;
+        color: $col_left_nav_link_active_fg;
+      }
+    }
+  }
+}
+
+.no-js body.left-nav {
+  #main,
+  #breadcrumb {
+    width: $page_width - $left_nav_width - $content_padding;
+    padding-left: $left_nav_width + $content_padding;
+  }
+
+  #messages {
+    width: $page_width - $left_nav_width - $content_padding;
+    padding-left: $left_nav_width + $content_padding;
+  }
+
+  &.one-sidebar #content {
+    width: $content_with_right_sidebar_width - $left_nav_width -
+      $content_padding;
+  }
+}
+
+html {
+  #nav {
+    display: none;
+
+    .menu-block-nav {
+      overflow: hidden;
+    }
+
+    ul {
+      position: absolute;
+      top: 10px; // the padding of the container
+      margin: 0;
+      @include transition(left 0.3s);
+
+      ul {
+        display: none;
+        top: 0;
+      }
+    }
+
+    a {
+      position: relative;
+      padding: 0;
+
+      &:link,
+      &:visited,
+      &:hover,
+      &:focus,
+      &.active {
+        background: $col_left_nav_item_bg;
+        color: $col_left_nav_link_fg;
+      }
+
+      .menu-item {
+        display: block;
+        padding: 5px 10px;
+
+        &:hover,
+        &:focus {
+          background: $col_left_nav_link_active_bg;
+          color: $col_left_nav_link_active_fg;
+        }
+      }
+
+      &:focus {
+        outline: 0 none;
+      }
+    }
+
+    .with-expander {
+      padding-right: 32px;
+    }
+
+    .current {
+      padding: 0 0 0 45px;
+      @include size(font-size, 20);
+      font-weight: normal;
+    }
+
+    .expander,
+    .back {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      padding: 0;
+      text-indent: -9000px;
+      overflow: hidden;
+      background-color: $col_left_nav_item_bg;
+      color: $col_link_fg;
+      text-align: center;
+      padding: 0;
+
+      &:before {
+        display: block;
+        text-indent: 0;
+        font-family: 'SHL Icons';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      &:hover {
+        background: $col_left_nav_link_active_bg;
+        color: $col_left_nav_link_active_fg;
+      }
+    }
+
+    .expander {
+      border-left: 2px solid $col_left_nav_bg;
+
+      &:before {
+        content: '\e92c';
+        font-size: (22px / 17px) * 1em;
+        font-weight: normal;
+        padding: 1px 0;
+      }
+    }
+
+    .back {
+      left: 0;
+      right: auto;
+      border-right: 2px solid $col_left_nav_bg;
+      width: 45px;
+      text-align: left;
+
+      &:before {
+        content: '\e92d';
+        font-size: (22px / 23px) * 1em;
+        font-weight: normal;
+        padding: 5px 5px 5px 12px;
+      }
+    }
+  }
+}
+
+#nav-button-container {
+  display: none;
+  padding: 10px;
+  background: $col_page_bg;
+  vertical-align: middle;
+
+  &.active {
+    background: $col_left_nav_bg;
+  }
+
+  .resources & {
+    display: inline-block;
+  }
+}
+
+#nav-button {
+  position: relative;
+  display: block;
+  text-indent: -9000px;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  @include border-radius(5px);
+  position: relative;
+
+  &:after {
+    display: block;
+    content: '\e900';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'SHL Icons';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 31px;
+    speak: none;
+    background: $col_left_nav_button_bg;
+    color: $col_left_nav_button_fg;
+    text-indent: 0;
+    text-align: center;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+  }
+
+  &.active {
+    &:after {
+      content: '\e903';
+    }
+  }
+}
+
+.js .left-nav #breadcrumb {
+  padding: 10px 0;
+}
+
+#block-shl-related-information {
+  .related-exhibition,
+  .related-event {
+    position: relative;
+    width: 331px;
+    height: 290px;
+    margin: 20px 0;
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: $col_related_info_link_fg;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $col_related_info_link_active_fg;
+      }
+
+      span {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        padding: 6px 18px 7px 57px;
+        background: $col_related_info_link_bg;
+        @include size(font-size, 24);
+      }
+    }
+  }
+}

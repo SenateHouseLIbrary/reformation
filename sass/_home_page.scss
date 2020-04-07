@@ -1,0 +1,64 @@
+///////////////////////////////////////////////////////////////////////////////
+// Styles for home page.                                                     //
+///////////////////////////////////////////////////////////////////////////////
+
+.node-home-page {
+  h1 {
+    display: none;
+  }
+
+  h2 {
+    @include size(font-size, 42);
+  }
+}
+
+.front {
+  #intro {
+    background: $col_homepage_intro_bg;
+    color: $col_homepage_intro_fg;
+    font-family: 'skolar-latin';
+    @include size(font-size, 41);
+    text-align: center;
+  }
+
+  #intro-content {
+    position: relative;
+    padding: 80px 100px;
+    width: $page_width - 100px - 100px;
+  }
+
+  #main-menu {
+    margin-bottom: 0;
+  }
+
+  #content {
+    padding-top: 100px;
+  }
+}
+
+#homepage-cta-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+#homepage-cta {
+  display: inline-block;
+  font-family: 'LemonMilk', 'skolar-latin', serif;
+  background: $col_homepage_cta_bg;
+  color: $col_homepage_cta_fg;
+  padding: 20px 40px;
+  margin: 0 0 23px 0;
+  @include size(font-size, 24);
+  @include transform(translateY(50%));
+  border: 1px solid $col_homepage_cta_bg;
+
+  &:hover,
+  &:focus {
+    background: $col_homepage_cta_active_bg;
+    color: $col_homepage_cta_active_fg;
+    border: 1px solid $col_homepage_cta_active_bg;
+  }
+}

@@ -1,0 +1,733 @@
+///////////////////////////////////////////////////////////////////////////////
+// Core styles of HTML elements.                                             //
+///////////////////////////////////////////////////////////////////////////////
+
+html {
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
+  -webkit-text-size-adjust: 100%; // Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+  -ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: 'ff-meta-web-pro', sans-serif, Arial;
+}
+
+body {
+  margin: 0;
+  @include size(font-size, 22);
+  line-height: (26 / 19);
+  background: $col_page_bg;
+}
+
+//
+// Fonts
+//
+
+@font-face {
+  font-family: 'SHL Icons';
+  src: font-url('SHL-Icons.eot');
+  src: font-url('SHL-Icons.eot?#iefix') format('embedded-opentype'),
+    font-url('SHL-Icons.ttf') format('truetype'),
+    font-url('SHL-Icons.woff') format('woff'),
+    font-url('SHL-Icons.svg#TheSerifB-W5Plain') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LemonMilk';
+  src: font-url('LemonMilk.eot?') format('eot'),
+    font-url('LemonMilk.woff') format('woff'),
+    font-url('LemonMilk.ttf') format('truetype'),
+    font-url('LemonMilk.svg#LemonMilk') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ref-font';
+  src: font-url('ref-font.eot?546r88');
+  src: font-url('ref-font.eot?546r88#iefix') format('embedded-opentype'),
+    font-url('ref-font.ttf?546r88') format('truetype'),
+    font-url('ref-font.woff?546r88') format('woff'),
+    font-url('ref-font.svg?546r88#ref-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//
+// Links
+//
+
+a {
+  &:link,
+  &:visited {
+    background-color: $col_link_bg;
+    color: $col_link_fg;
+    text-decoration: none;
+    // padding: 3px;
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    background-color: $col_link_active_bg;
+    color: $col_link_active_fg;
+    text-decoration: none;
+    padding: 3px;
+  }
+
+  &.img-link {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+//
+// Typography
+//
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'LemonMilk', 'skolar-latin', serif; //"skolar-latin",serif;
+  @include size(margin-bottom, 20);
+  line-height: 1.2;
+
+  .region-content & {
+    @include size(margin-bottom, 25);
+  }
+}
+
+h1 {
+  @include size(font-size, 40);
+}
+
+h2 {
+  @include size(font-size, 31);
+}
+
+h3 {
+  @include size(font-size, 28);
+}
+
+h4 {
+  @include size(font-size, 24);
+}
+
+h5,
+h6 {
+  @include size(margin-bottom, 22);
+  line-height: 1.2;
+}
+
+h5 {
+  @include size(font-size, 18);
+}
+
+h6 {
+  @include size(font-size, 17);
+  font-weight: bold;
+}
+
+sup,
+sub {
+  font-size: 0.8em;
+}
+
+sup {
+  vertical-align: super;
+}
+
+sub {
+  vertical-align: sub;
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+table,
+figure,
+.block,
+.field {
+  @include size(margin-bottom, 25);
+}
+
+ul,
+ol,
+.item-list ul {
+  list-style-position: outside;
+  @include size(padding-left, 25);
+}
+
+ul,
+ol {
+  &.menu-links,
+  &.menu {
+    padding-left: 0;
+  }
+}
+
+ul {
+  list-style-type: square;
+
+  ul {
+    margin-bottom: 0;
+    @include size(margin-left, 12);
+    list-style-type: disc;
+
+    ul {
+      list-style-type: circle;
+    }
+  }
+}
+
+ol {
+  list-style-type: decimal;
+
+  ol {
+    margin-bottom: 0;
+    @include size(margin-left, 12);
+    list-style-type: lower-roman;
+
+    ol {
+      list-style-type: lower-alpha;
+    }
+  }
+}
+
+li,
+.item-list ul li {
+  @include size(margin, 0, 0, 5);
+}
+
+li a.active {
+  color: $col_link_active_fg;
+}
+
+.menu-links {
+  list-style-type: none;
+}
+
+.item-list h3 {
+  @include size(margin-bottom, 10);
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  @include size(margin-left, 20);
+}
+
+blockquote {
+  position: relative;
+  padding: 0 25px;
+
+  &:before,
+  &:after {
+    display: block;
+    height: 70px;
+    font-family: 'SHL Icons';
+    font-size: 51px;
+    color: $col_blockquote_quote_fg;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &:before {
+    content: '\e932';
+    margin-left: -25px;
+    text-align: left;
+  }
+
+  &:after {
+    content: '\e933';
+    margin-right: -25px;
+    text-align: right;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+//
+// Tables
+//
+
+table {
+  width: 100%;
+
+  caption {
+    @include size(font-size, 25);
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+}
+
+td,
+th {
+  border: 1px solid $col_table_border;
+  @include size(padding, 0, 10);
+}
+
+thead th {
+  @include size(padding, 10);
+}
+
+th {
+  font-weight: bold;
+}
+
+//
+// Images
+//
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  display: table;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    background: $col_figcaption_bg;
+    color: $col_figcaption_fg;
+    @include size(font-size, 16);
+    @include size(padding, 5, 20);
+    text-align: center;
+  }
+}
+
+.image-left {
+  float: left;
+  @include size(margin-right, 15);
+}
+
+.image-right {
+  float: right;
+  @include size(margin-left, 15);
+}
+
+.image-centre {
+  text-align: center;
+}
+
+//
+// Link styles
+//
+
+a.external:after,
+a[rel='external']:after {
+  font-family: 'SHL Icons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+  display: inline-block;
+  margin: -3px 2px 0 5px;
+  content: '\e930';
+  font-size: 0.785714286em;
+}
+
+a.external.img-link:after {
+  display: none;
+}
+
+//
+// Button styles
+//
+
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+.button,
+.button:link,
+.button:visited {
+  position: relative;
+  display: inline-block;
+  background-color: $col_button_bg;
+  border: 0 none;
+  color: $col_button_fg;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 0 10px;
+  vertical-align: middle;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &.active {
+    background-color: $col_button_active_bg;
+    color: $col_button_active_fg;
+  }
+}
+
+//
+// Icons
+//
+
+.icon-font {
+  font-family: 'SHL Icons';
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+}
+
+h2,
+h3,
+h4 {
+  .icon-font {
+    font-size: 2.90625em;
+    display: inline-block;
+    @include border-radius(50%);
+    margin: 20px 0 15px;
+
+    background: $col_landing_icon;
+    color: $col_page_bg;
+    border: 30px solid $col_landing_icon;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      @include background-image(
+        linear-gradient($col_spot_shadow, $col_page_bg)
+      );
+      @include transform(rotate(-45deg));
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      right: -100%;
+      bottom: -100%;
+      z-index: -1;
+    }
+  }
+
+  a:link,
+  a:visited {
+    .icon-font {
+      &.research-collections {
+        background: $col_research_collections;
+        border-color: $col_research_collections;
+      }
+
+      &.special-collections {
+        background: $col_special_collections;
+        border-color: $col_special_collections;
+      }
+
+      &.eresources {
+        background: $col_databases_eresources;
+        border-color: $col_databases_eresources;
+      }
+
+      &.journals {
+        background: $col_print_electronic_journals;
+        border-color: $col_print_electronic_journals;
+      }
+
+      &.acquisitions {
+        background: $col_new_acquisitions;
+        border-color: $col_new_acquisitions;
+      }
+    }
+  }
+
+  a:hover,
+  a:focus {
+    .icon-font {
+      background: $col_link_active_fg;
+      border-color: $col_link_active_fg;
+
+      &.research-collections,
+      &.special-collections,
+      &.eresources,
+      &.journals,
+      &.acquisitions {
+        background: $col_link_active_fg;
+        border-color: $col_link_active_fg;
+      }
+    }
+  }
+
+  a:focus {
+    outline: 0 none;
+  }
+}
+
+// Reformation Icons
+
+.ref-icon- {
+  font-family: 'ref-font';
+  line-height: 1;
+  font-size: 1.65em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+}
+
+h2,
+h3,
+h4 {
+  .ref-icon- {
+    font-size: 2.90625em;
+    display: inline-block;
+    @include border-radius(50%);
+    margin: 20px 0 15px;
+
+    background: $col_landing_icon;
+    color: $col_page_bg;
+    border: 30px solid $col_landing_icon;
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      @include background-image(
+        linear-gradient($col_spot_shadow, $col_page_bg)
+      );
+      @include transform(rotate(-45deg));
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      right: -100%;
+      bottom: -100%;
+      z-index: -1;
+    }
+  }
+
+  a:link,
+  a:visited {
+    .ref-icon- {
+      background: $col_research_collections;
+      border-color: $col_research_collections;
+    }
+  }
+
+  a:hover,
+  a:focus {
+    .ref-icon- {
+      background: $col_link_active_fg;
+      border-color: $col_link_active_fg;
+    }
+  }
+
+  a:focus {
+    outline: 0 none;
+  }
+}
+
+//
+// Misc styles
+//
+
+.node-unpublished {
+  position: relative;
+  background-color: transparent;
+
+  &:before {
+    position: absolute;
+    display: block;
+    top: 240px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    content: 'DRAFT';
+    @include size(font-size, 200);
+    font-weight: bold;
+    opacity: 0.1;
+    @include transform(rotate(-45deg));
+    z-index: -1;
+  }
+}
+
+.title-small {
+  font-size: 0.714285714em;
+  font-weight: bold;
+}
+
+.ajax-progress {
+  line-height: 1.208333333;
+
+  .throbber {
+    display: inline-block;
+    float: none;
+    background-image: image-url('wheel.gif');
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+    vertical-align: middle;
+  }
+
+  .message {
+    display: inline-block;
+    padding: 0;
+    vertical-align: middle;
+  }
+
+  .register-online & {
+    margin-bottom: 20px;
+  }
+}
+
+.twitter,
+.facebook,
+.instagram,
+.mailing-list,
+.contact,
+.feedback,
+.exhibition-date,
+.exhibition-location,
+.exhibition-cost,
+// .node-teaser .event-type,
+// .node-featured .event-type,
+// .event-date,
+// .event-speaker,
+// .event-location,
+// .event-type,
+.exhibition a,
+.news-date,
+// .blog-date,
+// .blog-author,
+// .blog-category a,
+.librarian-email,
+.librarian-tel,
+.librarian-twitter {
+  display: block;
+  position: relative;
+  padding-left: 1.8em;
+
+  .item-list ul & {
+    padding-left: 1.8em;
+  }
+
+  &:before {
+    font-family: 'SHL Icons';
+    font-size: 1.375em;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: middle;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    padding-left: 1.8em;
+  }
+}
+
+.twitter:before {
+  content: '\e904';
+}
+
+.facebook:before {
+  content: '\e905';
+}
+
+.instagram:before {
+  content: '\e92e';
+}
+
+.mailing-list:before {
+  content: '\e906';
+}
+
+.contact {
+  line-height: 1.5;
+
+  &:before {
+    content: '\e907';
+    font-size: 1.5em;
+  }
+}
+
+.feedback {
+  line-height: 1.4375;
+
+  &:before {
+    content: '\e908';
+    font-size: 1.4375em;
+  }
+}
+
+.block.need-help {
+  .icon-list {
+    a {
+      padding-left: 3px;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+#block-menu-block-1 li a.active {
+  &:link,
+  &:visited {
+    color: $col_link_fg;
+  }
+
+  &:hover,
+  &:focus {
+    color: $col_link_active_fg;
+  }
+}
+
+a.feed-icon {
+  background-color: transparent;
+  padding: 0;
+}
+
+::-moz-selection {
+  background: #dab5f7;
+}
+::selection {
+  background: #dab5f7;
+}
